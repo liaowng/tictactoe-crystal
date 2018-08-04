@@ -12,6 +12,20 @@ public class MatchCoordinator {
     }
 
     public boolean moveMade(int gridIndex) {
+
+
+//        if (boardStatus[index] == Player.OPEN.val) {
+//            boardStatus[index] = currentPlayer.val;
+//            boardView.setPlayerOnGrid(index, currentPlayer);
+//
+//            if (currentPlayer == Player.ONE) {
+//                currentPlayer = Player.TWO;
+//            } else {
+//                currentPlayer = Player.ONE;
+//            }
+//        }
+
+
         final boolean valid = isValidMove(gridIndex);
 
         if (!valid) return false;

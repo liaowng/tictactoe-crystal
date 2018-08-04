@@ -85,6 +85,12 @@ public class BoardView extends CardView {
             case OPEN:
                 gridViews.get(gridIndex).setBackgroundColor(colorWhiteSmoke);
                 break;
+            case ONE:
+                gridViews.get(gridIndex).setBackgroundColor(colorPlayer1);
+                break;
+            case TWO:
+                gridViews.get(gridIndex).setBackgroundColor(colorPlayer2);
+                break;
             default:
                 throw new UnsupportedOperationException("TODO");
         }

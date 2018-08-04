@@ -2,7 +2,7 @@ package com.cabbage.tichtactoe.model;
 
 public enum Player {
 
-    OPEN(99),
+    OPEN(65),
     ONE(100),
     TWO(101);
 
