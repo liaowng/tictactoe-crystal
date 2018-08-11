@@ -9,7 +9,7 @@ public class Match {
             i++;
         }
     }
-
     public int[] boardStatus = new int[9];
     public Player currentPlayer = Player.ONE;
+    public Player winner = null;
 }

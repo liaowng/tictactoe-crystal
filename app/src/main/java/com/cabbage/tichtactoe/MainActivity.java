@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity
         implements BoardController {
 
     private BoardView boardView;
-
+    private Match match = new Match();
+    private MatchCoordinator matchCoordinator = new MatchCoordinator(match);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +24,19 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         boardView = findViewById(R.id.game_board);
         boardView.setController(this);
-
-        Match match = new Match();
-        Log.d("dd", "");
     }
-
-
-//    Match match = new Match();
-//    private MatchCoordinator matchCoordinator = new MatchCoordinator(match);
 
     @Override
     public void onGameBoardGridClicked(int index) {
-        Toast.makeText(this, "TODO, onClick: " + index, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "TODO, onClick: " + index, Toast.LENGTH_SHORT).show();
 
+        boolean valid = matchCoordinator.moveMade(index);
+        if (!valid) return;
+        Log.d("dd", "");
+        boardView.setPlayerOnGrid(index, match.currentPlayer);
 
-//        Log.d("dd", "");
-
+        if (match.winner != null) {
+            Toast.makeText(this, "Player " + match.winner + " win!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
